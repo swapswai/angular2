@@ -1,0 +1,165 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<!-- <app-navbar></app-navbar> -->
+<html>
+    <head>
+        <title>MAIN PAGE</title>
+
+    </head>
+<body>
+<main role="main" class="container container_c border">
+    <h4 class="mt-2">Price, Tax, & Activate</h4>
+    <div class="container border">
+        <br>
+        <div class="row">
+            <div class="col-lg-2 border-right">
+                <div class="row">
+                <div class="col-sm-3" align="left">
+                    <div class="round blue">
+                        <span class="glyphicon">1</span>
+                    </div>
+                </div>
+                <div class="col-sm-9" align="left">
+                    <span><label class="control-label custlabel">Select / Add Menu Item</label>
+                        <button (click)="addbtn()" type="button" class="btn btn-success info1">Add</button>
+                        <div class="">
+                            <p>Burger</p>
+                                <img class="" src="../assets/images/Burger6-Hamburger.jpg" alt="Card image cap">
+                              </div> 
+                    </span>
+                    <!-- <span class="addb"><button (click)="addbtn()" type="button" class="btn btn-success info1">Add</button></span> -->
+
+                </div>
+                </div>
+                
+                <!-- <div class="addb">
+                        <button (click)="addbtn()" type="button" class="btn btn-success info1">Add</button>
+                </div> -->
+            </div>
+            <div class="col-lg-10 selectMenu" id="selectDiv">
+                <div class="jumbotron" >
+                    <div class="row form-group">
+                            <label class="control-label custlabel">Select Menu Item</label>
+                            <br/>
+                            <div class="row custrow">
+                                    <div class="col-sm-3 btn-group" role="group" aria-label="..." id="myDIV">
+                                            <button (click)="contains_toggle(this)" type="button" id="contains" class="btn btn-success" style="border-top-left-radius: 25px; border-bottom-left-radius: 25px">Contains</button>
+                                            <button (click)="exact_toggle(this)" type="button" class="btn btn-default" id="exact" style="border-top-right-radius: 25px;border-bottom-right-radius: 25px">Exact</button>
+                                    </div> 
+                                        <!-- <div class="col-sm-3 btn-group" role="group" aria-label="..." id="myDIV">
+                                        <button (click)="contains_toggle(this)" type="button" id="contains" class="btn btn-success" style="border-top-left-radius: 25px; border-bottom-left-radius: 25px">Contains</button>
+                                        <button (click)="exact_toggle(this)" type="button" class="btn btn-success" id="exact" style="border-top-right-radius: 25px;border-bottom-right-radius: 25px">Exact</button>
+                                    </div>  -->
+                                    <div class="col-sm-3"><input type="text" id="s_numnam" placeholder="Search By Menu Item or Name" class="search_numname" [(ngModel)]="allSearch"></div>
+                                    <div class="col-sm-3"><div class="region">
+                                        <label class="control-label">Class</label>
+                                        <br />
+                                        <select [(ngModel)]="classSearch" value="All">
+                                                                                    <option *ngFor="let v of _values1">{{ v.val }}</option>
+                                        </select>
+                                    </div>
+                                    </div>
+                                    <div class="col-sm-3 searchb">
+                                            <button (click)="searchbtn()" type="button" class="btn btn-info info1">Search</button>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="tablediv" class="table-responsive table-wrapper-scroll-y border" >
+                        <table class="table">
+                                <thead>
+                                  <tr>
+                                    <th></th>
+                                    <th>Number</th>
+                                    <th>Name</th>
+                                    <th>Class</th>
+                                  </tr>
+                                  <tr>
+                                        <th> Select All checkbox</th>
+                                        <th><input type="text" id="s_num" placeholder="Filter by Item" class="search_numname" [(ngModel)]="idSearch"></th>
+                                        <th><input type="text" id="s_name" placeholder="Filter by Name" class="search_numname" [(ngModel)]="nameSearch"></th>
+                                        <th><select  [(ngModel)]="classSearch" value="All">
+                                                <option *ngFor="let v of _values1">{{ v.val }}</option>
+                                            </select></th>
+                                      </tr>
+                                </thead>
+                                <tbody>
+                                  <tr *ngFor="let game of games | orderBy:id: reverse | filterSearch: idSearch:nameSearch:classSearch:allSearch; let i = index">
+                                    <td><input type="checkbox" [(ngModel)]="game.selected" (change)="checkIfAllSelected();"></td>
+                                    <td>{{game.id}}</td>
+                                    <td>{{game.name}}</td>
+                                    <td>{{game.genre}}</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                              
+                    </div>
+                    <br><br><br><br><br><br>
+                    <div class="row custrow">
+                        <div class="col-sm-3 btn-group" role="group" aria-label="..." id="myDIV">
+                           
+                        </div>
+                        <div class="col-sm-3"></div>
+                        <div class="col-sm-3">
+                        </div>
+                        <div class="col-sm-3 searchb nextbtn" id="nextdiv">
+                                <button (click)="searchbtn()" type="button" class="btn btn-success info2">Next</button>
+                        </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+                <div class="col-lg-3"></div>
+                <div class="col-lg-9"></div>
+
+        </div>
+
+    </div>
+    
+            <!-- <div class="col-md-3">
+                <label class="control-label">Select Menu Item</label>
+                <br/> -->
+
+
+
+
+                <!-- <div class="btn-group" role="group" aria-label="..." id="myDIV">
+                    <button (click)="test(this)" type="button" id="contains" class="btn btn-success" style="border-top-left-radius: 25px; border-bottom-left-radius: 25px">Contains</button>
+                    <button (click)="test_c(this)" type="button" class="btn btn-success" id="exact" style="border-top-right-radius: 25px;border-bottom-right-radius: 25px">Exact</button>
+                </div> -->
+            <!-- </div>
+            <div>
+                <br/> -->
+                <!-- <input type="text" id="s_numnam" placeholder="Search By Menu Item or Name" class="search_numname" [(ngModel)]="filter"> -->
+            <!-- </div> -->
+            <!-- <div class="market">
+                <label class="control-label">Market</label>
+                <br/>
+                <input type="text" value="US Country office" disabled>
+            </div> -->
+            <!-- <div class="region">
+                <label class="control-label">Class</label>
+                <br />
+                <select (change)="firstDropDownChanged($event.target.selectedIndex - 1)">
+                    <option>All</option>
+                    <option *ngFor="let v of _values1">{{ v.val }}</option>
+                </select>
+            </div> -->
+            <!-- <div class="coop">
+                <label class="control-label">Coop</label>
+                <br />
+                <select>
+                    <option>All</option>
+                    <option *ngFor='let v of _values2'>{{ v }}</option>
+                </select>
+            </div> -->
+            <!-- <div class="searchb">
+                <button (click)="searchbtn()" type="button" class="btn btn-info info1">Search</button>
+            </div> -->
+
+
+    <!-- <pagination-controls (pageChange)="p = $event"></pagination-controls> -->
+</main>
+<!-- <app-footer></app-footer> -->
+</body>
+</html>
